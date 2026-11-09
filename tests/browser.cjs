@@ -31,6 +31,12 @@ const fs = require('node:fs');
       await page.waitForFunction(() => [...document.images].every(i => i.complete && i.naturalWidth > 0));
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
       await page.screenshot({path:`artifacts/drew-${width}.png`, fullPage:true});
+      if (width === 1440) {
+        await page.setViewportSize({width:1200,height:800});
+        await page.evaluate(() => window.scrollTo(0,0));
+        const image = await page.screenshot();
+        console.log('PORTFOLIO_IMAGE drew-capa.png ' + image.toString('base64'));
+      }
     }
     assert.deepEqual(errors,[]);
     console.log('OK: navegação, briefing baixado, tema persistido, imagens e duas larguras.');
