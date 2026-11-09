@@ -1,5 +1,7 @@
 # Drew Studio — Site demonstrativo
 
+![Demonstração real do projeto](docs/portfolio/drew-capa.png)
+
 Site de um estúdio criativo fictício. Apresenta serviços, explica o processo de trabalho e permite selecionar um serviço e gerar um briefing em arquivo `.txt`.
 
 O formulário **não envia mensagens**: o visitante baixa o resumo no próprio navegador. Assim, a demonstração pode ser testada sem cadastrar e-mail nem contratar um serviço de formulários.
